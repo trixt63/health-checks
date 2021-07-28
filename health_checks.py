@@ -2,6 +2,7 @@
 import os
 import sys
 import shutil
+import psutil
 
 def check_reboot():
     """Returns True if the computer has a pending reboot"""
@@ -22,10 +23,16 @@ def check_root_full():
     """Returns True if the root partition is full, False otherwise"""
     return check_disk_full(disk="/", min_gb=2, min_percent=10)
 
+
+def check_cpu_constrained():
+    """Return True if the cpu is having too much usage, False otherwise"""
+    return psutil.cpu_percent(1) > 75
+
 def main():
     checks = [
         (check_reboot, "Pending Reboot"),
         (check_root_full, "Root partition full"),
+        (check_cpu_constrained, "CPU load too high"),
     ]
     everything_ok = True
 
