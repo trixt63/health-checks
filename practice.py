@@ -5,9 +5,9 @@ def feature1():
 
 def feature2():
     print("feature 2")
+    
 
 def main():
     feature1()
-    feature2()
 
 main()
