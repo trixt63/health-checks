@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 
 def feature1():
-    print("feature 1")
+    pass
 
 def feature2():
-    print("feature 2")
-    
+    pass 
 
 
 def feature3():
@@ -15,6 +14,6 @@ def feature4():
     pass
 
 def main():
-    feature1()
+    pass
 
 main()
